@@ -1,0 +1,47 @@
+@page "/members"
+@inject HttpClient Http
+
+<h2 class="text-center">📋 Members List</h2>
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (members is null)
+        {
+            <tr><td colspan="3" class="text-center">Loading...</td></tr>
+        }
+        else
+        {
+            @foreach (var member in members)
+            {
+                <tr>
+                    <td>@member.Name</td>
+                    <td>@member.PhoneNumber</td>
+                    <td>@member.Balance.ToString("C")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Member>? members;
+
+    protected override async Task OnInitializedAsync()
+    {
+        members = await Http.GetFromJsonAsync<List<Member>>("https://localhost:5093/api/members");
+    }
+
+    private class Member
+    {
+        public required string Name { get; set; }
+        public required string PhoneNumber { get; set; }
+        public decimal Balance { get; set; }
+    }
+}

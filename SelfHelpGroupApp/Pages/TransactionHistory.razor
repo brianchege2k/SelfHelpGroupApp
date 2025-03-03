@@ -1,0 +1,59 @@
+@page "/transaction-history"
+@inject HttpClient Http
+
+<h2 class="text-center">🔄 Transaction History</h2>
+
+<div class="card p-4">
+    <div class="mb-3">
+        <label class="form-label">Enter Member ID</label>
+        <input type="number" class="form-control" @bind="memberId" required />
+    </div>
+    <button class="btn btn-primary w-100" @onclick="LoadTransactions">View Transactions</button>
+</div>
+
+<table class="table table-hover mt-4" style="display:@(transactions != null && transactions.Count > 0 ? "table" : "none")">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (transactions is null)
+        {
+            <tr><td colspan="3" class="text-center">No transactions found.</td></tr>
+        }
+        else
+        {
+            @foreach (var transaction in transactions)
+            {
+                <tr>
+                    <td>@transaction.Type</td>
+                    <td>@transaction.Amount.ToString("C")</td>
+                    <td>@transaction.TransactionDate.ToString("yyyy-MM-dd HH:mm")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private int memberId;
+    private List<Transaction>? transactions;
+
+    private async Task LoadTransactions()
+    {
+        if (memberId <= 0)
+            return;
+
+        transactions = await Http.GetFromJsonAsync<List<Transaction>>($"https://localhost:5092/api/transactions/member/{memberId}");
+    }
+
+    private class Transaction
+    {
+        public required string Type { get; set; }
+        public decimal Amount { get; set; }
+        public DateTime TransactionDate { get; set; }
+    }
+}
