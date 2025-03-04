@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SelfHelpGroupAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d09dae19bbf4d77aa85ca06ff6c181266e756517")]
 [assembly: System.Reflection.AssemblyProductAttribute("SelfHelpGroupAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SelfHelpGroupAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

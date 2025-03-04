@@ -13,47 +13,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = SelfHelpGroupApp
 build_property.RootNamespace = SelfHelpGroupApp
-build_property.ProjectDir = /home/chege/SelfHelpGroupApp/
+build_property.ProjectDir = /home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/chege/SelfHelpGroupApp
+build_property.MSBuildProjectDirectory = /home/chege/SelfHelpLedgerApp/SelfHelpGroupApp
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/chege/SelfHelpGroupApp/App.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Pages/Balances.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Pages/Balances.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQmFsYW5jZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Pages/Home.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Pages/Members.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Pages/Members.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWVtYmVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Pages/TransactionHistory.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Pages/TransactionHistory.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNhY3Rpb25IaXN0b3J5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Pages/Transactions.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Pages/Transactions.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNhY3Rpb25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/_Imports.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/chege/SelfHelpGroupApp/Layout/MainLayout.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-f8ltl96pw9
 
-[/home/chege/SelfHelpGroupApp/Layout/NavMenu.razor]
+[/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-jdo9j8py2m

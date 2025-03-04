@@ -1878,11 +1878,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chege/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
+      "projectUniqueName": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
       "projectName": "SelfHelpGroupApp",
-      "projectPath": "/home/chege/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
+      "projectPath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
       "packagesPath": "/home/chege/.nuget/packages/",
-      "outputPath": "/home/chege/SelfHelpGroupApp/obj/",
+      "outputPath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/chege/.nuget/NuGet/NuGet.Config"

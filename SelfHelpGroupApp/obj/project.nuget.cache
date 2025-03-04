@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PcyiE92KqfoX8dk3b4ZYya3UnsrYlPvF84Jfip04+ZXCRD6iNGhSn5OI35QwFe7xo/IMpF8JzWIp8W9i2IaTWg==",
+  "dgSpecHash": "WsZkZb0YR47dCER/KxbQOYyTKP+T0BaLeutHtWUmvLV7Ser9bqsX9bItU1mxBWICz9LJnYQvNVN3hPCCKV2j5A==",
   "success": true,
-  "projectFilePath": "/home/chege/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
+  "projectFilePath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupApp/SelfHelpGroupApp.csproj",
   "expectedPackageFiles": [
     "/home/chege/.nuget/packages/microsoft.aspnetcore.authorization/8.0.12/microsoft.aspnetcore.authorization.8.0.12.nupkg.sha512",
     "/home/chege/.nuget/packages/microsoft.aspnetcore.components/8.0.12/microsoft.aspnetcore.components.8.0.12.nupkg.sha512",

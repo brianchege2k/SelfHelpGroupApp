@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vT0V2vZg3rSzWcHr5WVaG7QtY8DfD5wfkzjp1556ckRQLfxdyBne2HyBQm/JLYpcypVDkvV5T1tyrydUG4tx4g==",
+  "dgSpecHash": "efpFpIhnDjVDskhS3FxEO2riS/dT+JJB8oyxzFzmFqPQ8rr1D6KTe0Vvhw7ZMQn45VTdBatcNjXGY9myNWHJyA==",
   "success": true,
-  "projectFilePath": "/home/chege/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
+  "projectFilePath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
   "expectedPackageFiles": [
     "/home/chege/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/chege/.nuget/packages/microsoft.aspnetcore.openapi/8.0.12/microsoft.aspnetcore.openapi.8.0.12.nupkg.sha512",

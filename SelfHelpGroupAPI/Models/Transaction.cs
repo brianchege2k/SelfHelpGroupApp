@@ -12,13 +12,13 @@ namespace SelfHelpGroupAPI.Models
         public int MemberId { get; set; }
 
         [ForeignKey("MemberId")]
-        public required Member Member { get; set; }
+        public Member? Member { get; set; } // Made optional by removing 'required' and adding '?'
 
         [Required]
         public decimal Amount { get; set; }
 
         [Required]
-        public required string Type { get; set; } // "Deposit" or "Withdrawal"
+        public string Type { get; set; } = "Deposit"; // Simplified to non-nullable with default value
 
         [Required]
         public DateTime TransactionDate { get; set; } = DateTime.UtcNow;

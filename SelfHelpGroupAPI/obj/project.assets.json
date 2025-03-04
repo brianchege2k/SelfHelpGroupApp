@@ -3378,11 +3378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chege/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
+      "projectUniqueName": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
       "projectName": "SelfHelpGroupAPI",
-      "projectPath": "/home/chege/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
+      "projectPath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupAPI/SelfHelpGroupAPI.csproj",
       "packagesPath": "/home/chege/.nuget/packages/",
-      "outputPath": "/home/chege/SelfHelpGroupAPI/obj/",
+      "outputPath": "/home/chege/SelfHelpLedgerApp/SelfHelpGroupAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/chege/.nuget/NuGet/NuGet.Config"

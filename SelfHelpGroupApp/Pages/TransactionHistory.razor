@@ -4,33 +4,37 @@
 <h2 class="text-center">🔄 Transaction History</h2>
 
 <div class="card p-4">
-    <div class="mb-3">
-        <label class="form-label">Enter Member ID</label>
-        <input type="number" class="form-control" @bind="memberId" required />
-    </div>
-    <button class="btn btn-primary w-100" @onclick="LoadTransactions">View Transactions</button>
+    <button class="btn btn-primary w-100" @onclick="LoadTransactions">View All Transactions</button>
 </div>
 
 <table class="table table-hover mt-4" style="display:@(transactions != null && transactions.Count > 0 ? "table" : "none")">
     <thead>
         <tr>
-            <th>Type</th>
+            <th>Transaction ID</th>
+            <th>Member Name</th>
+            <th>Member Phone</th>
+            <th>Member Balance</th>
             <th>Amount</th>
+            <th>Type</th>
             <th>Date</th>
         </tr>
     </thead>
     <tbody>
-        @if (transactions is null)
+        @if (transactions is null || transactions.Count == 0)
         {
-            <tr><td colspan="3" class="text-center">No transactions found.</td></tr>
+            <tr><td colspan="7" class="text-center">No transactions found.</td></tr>
         }
         else
         {
             @foreach (var transaction in transactions)
             {
                 <tr>
-                    <td>@transaction.Type</td>
+                    <td>@transaction.Id</td>
+                    <td>@transaction.Member.Name</td>
+                    <td>@transaction.Member.PhoneNumber</td>
+                    <td>@transaction.Member.Balance.ToString("C")</td>
                     <td>@transaction.Amount.ToString("C")</td>
+                    <td>@transaction.Type</td>
                     <td>@transaction.TransactionDate.ToString("yyyy-MM-dd HH:mm")</td>
                 </tr>
             }
@@ -39,21 +43,30 @@
 </table>
 
 @code {
-    private int memberId;
     private List<Transaction>? transactions;
 
     private async Task LoadTransactions()
     {
-        if (memberId <= 0)
-            return;
+        // Call API to fetch all transactions (adjust the endpoint if needed)
+        transactions = await Http.GetFromJsonAsync<List<Transaction>>("http://localhost:5093/api/transactions");
+    }
 
-        transactions = await Http.GetFromJsonAsync<List<Transaction>>($"https://localhost:5092/api/transactions/member/{memberId}");
+    private class Member
+    {
+        public required int Id { get; set; }
+        public required string Name { get; set; }
+        public required string PhoneNumber { get; set; }
+        public DateTime JoinDate { get; set; }
+        public decimal Balance { get; set; }
     }
 
     private class Transaction
     {
-        public required string Type { get; set; }
+        public required int Id { get; set; }
+        public required int MemberId { get; set; }
+        public required Member Member { get; set; }
         public decimal Amount { get; set; }
+        public required string Type { get; set; }
         public DateTime TransactionDate { get; set; }
     }
 }

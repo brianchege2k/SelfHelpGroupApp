@@ -1,5 +1,7 @@
 @page "/transactions"
 @inject HttpClient Http
+@using System.Text.Json
+@using System.Text.Json.Serialization
 
 <h2 class="text-center">💳 Member Transactions</h2>
 
@@ -7,7 +9,7 @@
     <form @onsubmit="SubmitTransaction">
         <div class="mb-3">
             <label class="form-label">Member ID</label>
-            <input type="number" class="form-control" @bind="transaction.MemberId" required />
+            <input type="number" class="form-control" @bind="transaction.MemberId" @onblur="LoadMemberDetails" required />
         </div>
         <div class="mb-3">
             <label class="form-label">Amount</label>
@@ -20,23 +22,121 @@
                 <option>Withdrawal</option>
             </select>
         </div>
+
+        <!-- Display member details once they are fetched -->
+        @if (transaction.Member != null)
+        {
+            <div class="mb-3">
+                <label class="form-label">Member Name</label>
+                <input type="text" class="form-control" @bind="transaction.Member.Name" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Member Phone</label>
+                <input type="text" class="form-control" @bind="transaction.Member.PhoneNumber" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Member Join Date</label>
+                <input type="text" class="form-control" @bind="transaction.Member.JoinDate" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Member Balance</label>
+                <input type="text" class="form-control" @bind="transaction.Member.Balance" disabled />
+            </div>
+        }
+
         <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
 </div>
 
 @code {
-    private Transaction transaction = new() { Type = "Deposit" };
+    // Initialize the transaction object with default values
+    private Transaction transaction = new() { Type = "Deposit", Member = new Member() };
 
-    private async Task SubmitTransaction()
+    // Fetch member details based on the Member ID entered
+    private async Task LoadMemberDetails()
     {
-        await Http.PostAsJsonAsync("https://localhost:5092/api/transactions", transaction);
-        transaction = new() { Type = "Deposit" };
+        try
+        {
+            if (transaction.MemberId <= 0) return;
+
+            // Fetch member from the API
+            var member = await Http.GetFromJsonAsync<Member>($"http://localhost:5093/api/members/{transaction.MemberId}");
+
+            // If member exists, update the transaction's member for display
+            if (member != null)
+            {
+                transaction.Member = new Member
+                {
+                    Id = member.Id,
+                    Name = member.Name,
+                    PhoneNumber = member.PhoneNumber,
+                    JoinDate = member.JoinDate,
+                    Balance = member.Balance
+                };
+            }
+            else
+            {
+                // Reset member data if not found
+                transaction.Member = new Member();
+                Console.WriteLine($"No member found with ID {transaction.MemberId}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception while fetching member: {ex.Message}");
+        }
     }
 
+    // Submit the transaction
+    private async Task SubmitTransaction()
+    {
+        // Assign current UTC time as the transaction date
+        transaction.TransactionDate = DateTime.UtcNow;
+
+        try
+        {
+            // Log the transaction to verify the data being sent
+            Console.WriteLine($"Transaction: {JsonSerializer.Serialize(transaction)}");
+
+            // Send POST request to submit the transaction
+            var response = await Http.PostAsJsonAsync("http://localhost:5093/api/transactions", transaction);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Reset the form after successful submission
+                transaction = new() { Type = "Deposit", Member = new Member() };
+                Console.WriteLine("Transaction submitted successfully.");
+            }
+            else
+            {
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {errorMessage}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+
+    // Define the Transaction model
     private class Transaction
     {
         public int MemberId { get; set; }
         public decimal Amount { get; set; }
-        public required string Type { get; set; } = "Deposit";
+        public string Type { get; set; } = "Deposit";
+        public DateTime TransactionDate { get; set; }
+        [JsonIgnore] // Prevent Member from being serialized and sent to the server
+        public Member Member { get; set; } = new Member();
+    }
+
+    // Define the Member model
+    private class Member
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+        public DateTime JoinDate { get; set; } = DateTime.UtcNow;
+        public decimal Balance { get; set; } = 0;
     }
 }
