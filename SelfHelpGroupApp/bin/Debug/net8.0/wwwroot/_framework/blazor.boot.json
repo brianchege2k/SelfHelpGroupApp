@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SelfHelpGroupApp",
   "resources": {
-    "hash": "sha256-U97y0ah9KQ/stjIzXu9U3iicQuJ0UZn2U3kFKGTruRE=",
+    "hash": "sha256-CM2EtrVmxWc+MKW5KuWUBajkg70cTRUEUFzu86VZJA0=",
     "jsModuleNative": {
       "dotnet.native.8.0.12.1ka0xpo0j3.js": "sha256-B6DNRvFeCUi3jbx9uKpuj+hV9cN0KG4RdZj1FgBZwj8="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "SelfHelpGroupApp.wasm": "sha256-+zBrdNJQqwSp7UlWnCPP1O7ws7DMV/KwtzCWpQSBNfE="
+      "SelfHelpGroupApp.wasm": "sha256-+uJkhF2x91XLKdRBSz9JG7GRySNfbwKFUdVz1QTWgf4="
     },
     "pdb": {
-      "SelfHelpGroupApp.pdb": "sha256-RxLMCPKg7TxL/gpDjHsF69h/LKAh9v1s+6hausntUwo="
+      "SelfHelpGroupApp.pdb": "sha256-i397d3B069bPYrhqdyt1tW4Rot0svZxkI+JKMAjKOOA="
     }
   },
   "cacheBootResources": true,

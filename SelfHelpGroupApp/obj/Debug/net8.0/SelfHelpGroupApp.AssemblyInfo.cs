@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SelfHelpGroupApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d09dae19bbf4d77aa85ca06ff6c181266e756517")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+573d930b2b59c7e41e77bde554cdd88c707642f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SelfHelpGroupApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SelfHelpGroupApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
